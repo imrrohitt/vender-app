@@ -1,0 +1,16 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: 20
+  reaping_frequency: 3
+  username: rohit
+  password: <password>
+
+development:
+  <<: *default
+  database: vender_app
+
+test: &test
+  <<: *default
+  idle_timeout: 0
+  database: vender_app_test
